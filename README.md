@@ -1,8 +1,8 @@
 # Mini Form UI  
 
-This is a simple RWD UI.  
+This is a mini RWD UI.  
 
-It has styles for `header`, `footer`, `left-menu`, `sub-menu`, `content`, `table`, and backend engineers can use it to quickly develop website prototypes.  
+It has styles for header, footer, left-menu, sub-menu, content, table, and backend engineers can use it to quickly develop website prototypes.  
 
 ---  
 
