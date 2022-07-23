@@ -11,6 +11,8 @@ It has styles for `header`, `footer`, `left-menu`, `sub-menu`, `content`, `table
 Download and unzip the package.  
 [releases/MiniFormUI-v1.0.0.zip](https://github.com/fysh711426/MiniFormUI/releases)
 
+Import css and js.  
+
 ```Html
 <link rel="stylesheet" href="layout.css">
 <script src="layout.js"></script>
