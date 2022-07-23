@@ -8,14 +8,12 @@ It has styles for `header`, `footer`, `left-menu`, `sub-menu`, `content`, `table
 
 ### Get Started  
 
-* CDN  
+Download and unzip the package.  
+[releases/MiniFormUI-v1.0.0.zip](https://github.com/fysh711426/MiniFormUI/releases)
 
 ```Html
-https://cdn.statically.io/gh/fysh711426/MiniFormUI/master/layout.css
-```  
-
-```Html
-https://cdn.statically.io/gh/fysh711426/MiniFormUI/master/layout.js
+<link rel="stylesheet" href="layout.css">
+<script src="layout.js"></script>
 ```  
 
 ---  
