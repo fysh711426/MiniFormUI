@@ -11,11 +11,11 @@ It has styles for `header`, `footer`, `left-menu`, `sub-menu`, `content`, `table
 * CDN  
 
 ```Html
-
+https://cdn.statically.io/gh/fysh711426/MiniFormUI/master/layout.css
 ```  
 
 ```Html
-
+https://cdn.statically.io/gh/fysh711426/MiniFormUI/master/layout.js
 ```  
 
 ---  
