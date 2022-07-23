@@ -22,10 +22,10 @@ Import css and js.
 
 ### Demo  
 
-* Desktop.  
+* Desktop  
 
 ![desktop.jpg](demo/desktop.jpg)  
 
-* Mobile.  
+* Mobile  
 
 ![mobile.jpg](demo/mobile.jpg)  
