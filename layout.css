@@ -258,12 +258,21 @@ a:link, a:visited, a:active {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    /* border-left: 3px solid #505050; */
+    border-left: 3px solid rgba(0, 0, 0, 0);
 }
 
 .left-menu-item.active {
     background-color: #f1f1f1;
     border-left: 3px solid #505050;
+}
+
+.left-menu-item i {
+    margin-right: 5px;
+    color: #ccc;
+}
+
+.left-menu-item.active i {
+    color: inherit;
 }
 
 @media screen and (min-width: 1025px) {
@@ -273,6 +282,10 @@ a:link, a:visited, a:active {
 
     .left-menu-item:hover {
         background-color: #f5f5f5;
+    }
+
+    .left-menu-item:hover i {
+        color: inherit;
     }
 }
 
