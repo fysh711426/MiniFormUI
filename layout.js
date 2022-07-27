@@ -1,4 +1,4 @@
-var mini = (function() {
+var $m = (function() {
     var _this = {
         onNav: function() {
             var leftMenu = document.querySelector('.left-menu');
