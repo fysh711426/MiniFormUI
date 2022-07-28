@@ -3,9 +3,9 @@ z-index
     alert = 7000
     dropdown = 6200
     timepick = 6100
-    header = 5100
+    header = 5200
     left-menu = 5300
-    sub-menu = 5200
+    sub-menu = 5100
 */
 
 /*----- scrollbar -----*/
@@ -67,8 +67,8 @@ a:link, a:visited, a:active {
 
 .header {
     position: relative;
+    z-index: 5200;
     font-size: 0;
-    z-index: 5100;
     margin: 0px 0px 0px 0px;
     /* border-radius: 0.35rem; */
     background-color: #fff;
@@ -76,11 +76,16 @@ a:link, a:visited, a:active {
     /* box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.5); */
 }
 
+.header.sticky {
+    position: sticky;
+    top: 0;
+}
+
 .header-inner {
     display: flex;
     justify-content: space-between;
     height: 60px;
-    max-width: 1304px;
+    max-width: 1324px;
     margin: 0 auto;
 }
 
@@ -187,7 +192,7 @@ a:link, a:visited, a:active {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1304px;
+    max-width: 1324px;
     margin: 0 auto;
 }
 
@@ -200,8 +205,8 @@ a:link, a:visited, a:active {
     position: sticky;
     top: 0;
     align-self: start;
-    width: 220px;
-    min-width: 220px;
+    width: 240px;
+    min-width: 240px;
     margin: 15px 15px 15px 0px;
     z-index: 5300;
     border-radius: 0.35rem;
@@ -224,10 +229,11 @@ a:link, a:visited, a:active {
     .left-menu.open {
         display: block;
         position: fixed;
-        top: 0;
+        top: 60px;
         left: 0;
         bottom: 0;
         margin: 0 0 0 0;
+        border-radius: 0px;
     }
 
     .left-menu-mask.open {
@@ -236,7 +242,7 @@ a:link, a:visited, a:active {
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 5299;
+        z-index: 5199;
         background-color: rgba(0, 0, 0, 0.5);
     }
 }
@@ -294,13 +300,17 @@ a:link, a:visited, a:active {
 /*----- sub-menu -----*/
 
 .sub-menu {
-    position: sticky;
-    top: 0;
+    position: relative;
+    z-index: 5100;
     margin: 15px 0px 15px 0px;
     background-color: #fff;
     border-radius: 0.35rem;
-    z-index: 5200;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+}
+
+.sub-menu.sticky {
+    position: sticky;
+    top: 0;
 }
 
 .sub-menu-inner {
@@ -442,4 +452,13 @@ table th, table td {
     line-height: 0.9rem;
 }
 
+.row-empty {
+    padding: 30px 15px;
+    font-size: 0.9rem;
+}
+
 /*----- table -----*/
+
+/*----- popover -----*/
+
+/*----- popover -----*/
