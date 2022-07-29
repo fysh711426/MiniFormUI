@@ -144,7 +144,10 @@ td.rank  {
     width: 35%;
 }
 
-.name-warp {
+.name-warp span {
+    display: inline-block;
+    max-width: 100%;
+    line-height: inherit;
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
