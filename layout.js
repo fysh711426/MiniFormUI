@@ -64,19 +64,10 @@ var $m = (function () {
                             var html = template.innerHTML;
                             var content = item.getAttribute('content');
                             html = html.replace('__content__', content);
-                            var _class = item.getAttribute('tooltip-class');
-                            if (content)
-                                html = html.replace('__class__', _class);
-                            html = html.replace('__class__', '');
                             element = createElement(html);
                             document.body.appendChild(element);
                             var top = rect.top + rect.height + 3;
-                            var left = 0;
-                            if (item.className.indexOf('left') > -1) {
-                                left = rect.left;
-                            } else {
-                                left = rect.left + rect.width / 2 - element.offsetWidth / 2;
-                            }
+                            var left = rect.left + rect.width / 2 - element.offsetWidth / 2;
                             var scroll = document.documentElement.scrollTop || document.body.scrollTop;
                             element.style.transform = 'translate3d(' + left + 'px, ' + (top + scroll) + 'px, 0px)';
                         }
