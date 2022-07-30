@@ -16,8 +16,8 @@ jobs:
 
       - name: Build
         run: |
-          copy layout.css build\layout.css
-          copy layout.js build\layout.js
+          cp layout.css build\layout.css
+          cp layout.js build\layout.js
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
