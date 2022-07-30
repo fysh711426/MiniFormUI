@@ -191,17 +191,23 @@
                     footer
                 </div>
             </div> -->
-            <div class="tooltip-template">
-                <div class="tooltip-block __class__">
-                    <div class="tooltip-inner">__content__</div>
-                </div>
-            </div>
         </div>
+    </div>
+    <div class="tooltip-template">
+        <div class="tooltip-block __class__">
+            <div class="tooltip-inner">__content__</div>
+        </div>
+    </div>
+    <div class="control">
+        <a class="button gotop" href="javascript:void(0)">
+            <i class="fa-solid fa-angle-up"></i>
+        </a>
     </div>
     <script>
         $m.selectMenu('Item1');
         $m.selectSubMenu('Item1');
         $m.tooltip('.tooltip');
+        $m.gotop('.gotop');
     </script>
 </body>
 
