@@ -1,0 +1,30 @@
+name: deploy git page
+on:
+  push:
+    branches:
+      - master
+      
+permissions:
+  contents: write
+  
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.publish }}
+          folder: build
+          branch: master
+          git-config-name: fysh711426
+          git-config-email: fysh711426@gmail.com
+          repository-name: fysh711426/fysh711426.github.io
+          target-folder: cdn/mini-form-ui
+          commit-message: auto-commit
+          force: false
+          clean: false
+          single-commit: true
