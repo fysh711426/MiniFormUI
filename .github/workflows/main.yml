@@ -17,8 +17,8 @@ jobs:
       - name: Build
         run: |
           echo "$PWD"
-          cp layout.css build\layout.css
-          cp layout.js build\layout.js
+          cp layout.css ./build/
+          cp layout.js ./build/
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
