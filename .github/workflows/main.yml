@@ -16,6 +16,7 @@ jobs:
 
       - name: Build
         run: |
+          echo "$PWD"
           cp layout.css build\layout.css
           cp layout.js build\layout.js
         
