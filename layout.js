@@ -1,5 +1,4 @@
 var $m = (function () {
-    var img = {};
     var _this = {
         onNav: function () {
             var leftMenu = document.querySelector('.left-menu');
