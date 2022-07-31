@@ -1,4 +1,5 @@
 var $m = (function () {
+    var img = {};
     var _this = {
         onNav: function () {
             var leftMenu = document.querySelector('.left-menu');
@@ -109,14 +110,8 @@ var $m = (function () {
             });
         },
         imgerror: function (e, url) {
-            var img = new Image();
-            img.src = url;
-            img.onload = function () {
-                if (this.complete) {
-                    e.target.src = img.src;
-                    img = null;
-                }
-            }
+            e.target.onerror = null;
+            e.target.src = url;
         }
     };
     function createElement(html) {
