@@ -2,8 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Form UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
     <link rel="shortcut icon" href="icon/favicon.ico" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -12,9 +13,11 @@
     <script src="layout.js"></script>
 
     <script>
-        function imgerror(e, url) {
-            e.target.onerror = null;
-            e.target.src = url;
+        var errorImage = 'images/default-head-176x176.png';
+        function imgError(e) {
+            if (errorImage) {
+                e.target.src = errorImage;
+            }
         }
     </script>
 </head>
@@ -197,7 +200,7 @@
                                     </td>
                                     <td class="logo">
                                         <div class="logo-warp">
-                                            <img src="" onerror="imgerror(event, 'images/default-head-176x176.png')" />
+                                            <img src="" onerror="imgError(event)" />
                                         </div>
                                     </td>
                                     <td class="name">
@@ -208,7 +211,7 @@
                                     <td class="score">-</td>
                                     <td class="video">
                                         <div class="video-warp">
-                                            <img src="" onerror="imgerror(event, 'images/default-video-336x188.png')" />
+                                            <img src="https://i.ytimg.com/vi/D_mhJlWgsY/hqdefault.jpg" />
                                             <div class="video-mask"></div>
                                             <div class="video-view">
                                                 <i class="fa-solid fa-play"></i>

@@ -168,12 +168,13 @@ td.rank  {
     position: relative;
     border-radius: 0.35rem;
     margin: 0 auto;
+    background-color: rgb(204, 204, 204);
 }
 
 .video-warp img {
     height: 100%;
     width: auto;
-    /* border-radius: 0.15rem; */
+    margin: auto;
 }
 
 .video-mask {

@@ -18,9 +18,14 @@ jobs:
       - name: Build
         run: |
           mkdir -p build
-          cp layout.css ./build/
-          cp layout.js ./build/
-          cp -r ./images/ ./build/
+          rm -r ./.github/
+          rm -r ./.demo/
+          rm .gitignore
+          rm LICENSE
+          rm README.md
+          sed -i 's/<base href="\/">/<base href="\/mini-form-ui\/">/g' *.html
+          shopt -s extglob
+          cp -r !(build) ./build/
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
@@ -31,7 +36,7 @@ jobs:
           branch: master
           git-config-name: fysh711426
           git-config-email: fysh711426@gmail.com
-          target-folder: cdn/mini-form-ui
+          target-folder: mini-form-ui
           commit-message: auto-commit
           force: false
           clean: false
