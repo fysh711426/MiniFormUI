@@ -22,6 +22,10 @@ Import css and js.
 
 ### Demo  
 
+[https://fysh711426.github.io/mini-form-ui/index.html](https://fysh711426.github.io/mini-form-ui/index.html)
+
+---  
+
 * Desktop  
 
 ![desktop.jpg](demo/desktop.jpg)  
