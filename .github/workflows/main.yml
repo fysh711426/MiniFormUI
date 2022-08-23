@@ -19,7 +19,6 @@ jobs:
         run: |
           mkdir -p build
           rm -r ./.github/
-          rm -r ./demo/
           rm .gitignore
           rm LICENSE
           rm README.md
