@@ -11,10 +11,8 @@ gulp.task('css', function () {
         './src/spinner/spinner.css',
         './src/layout/layout.css',
         './src/layout/layout-theme.css',
-        './src/file/file.css',
-        './src/file/file-theme.css',
-        './src/file/file-video-player.css',
-        './src/file/file-text-theme.css'
+        './src/form/form.css',
+        './src/form/form-theme.css'
     ])
     .pipe(concat('mini-form-ui.css'))
     .pipe(gulp.dest('./dist/'));
@@ -22,6 +20,27 @@ gulp.task('css', function () {
 
 gulp.task('min-css', gulp.series('css', function () {
     return gulp.src('./dist/mini-form-ui.css')
+        .pipe(minifyCSS())
+        .pipe(rename(function (path) {
+            path.basename += ".min";
+            path.extname = ".css";
+        }))
+        .pipe(gulp.dest('./dist/'));
+}));
+
+gulp.task('file-css', function () {
+    return gulp.src([
+        './src/file/file.css',
+        './src/file/file-theme.css',
+        './src/file/file-video-player.css',
+        './src/file/file-text-theme.css'
+    ])
+    .pipe(concat('mini-form-ui-file.css'))
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('file-min-css', gulp.series('file-css', function () {
+    return gulp.src('./dist/mini-form-ui-file.css')
         .pipe(minifyCSS())
         .pipe(rename(function (path) {
             path.basename += ".min";
@@ -38,8 +57,7 @@ gulp.task('script', function () {
         './src/progress/progress.js',
         './src/spinner/spinner.js',
         './src/toast/toast.js',
-        './src/layout/layout.js',
-        './src/file/file.js'
+        './src/layout/layout.js'
     ])
     .pipe(concat('mini-form-ui.js'))
     .pipe(gulp.dest('./dist/'));
@@ -55,4 +73,23 @@ gulp.task('min-script', gulp.series('script', function() {
         .pipe(gulp.dest('./dist/'));
 }));
 
-gulp.task('default', gulp.series('min-css', 'min-script'));
+gulp.task('file-script', function () {
+    return gulp.src([
+        './src/file/file.js'
+    ])
+    .pipe(concat('mini-form-ui-file.js'))
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('file-min-script', gulp.series('file-script', function() {
+    return gulp.src('./dist/mini-form-ui-file.js')
+        .pipe(uglify())
+        .pipe(rename(function(path) {
+            path.basename += ".min";
+            path.extname = ".js";
+        }))
+        .pipe(gulp.dest('./dist/'));
+}));
+
+gulp.task('default', 
+    gulp.series('min-css', 'min-script', 'file-min-css', 'file-min-script'));
