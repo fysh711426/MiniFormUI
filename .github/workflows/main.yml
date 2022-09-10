@@ -29,6 +29,7 @@ jobs:
           mkdir -p build
           sed -i 's/<base href="\/">/<base href="\/mini-form-ui\/">/g' *.html
           cp *.html ./build/
+          cp *.css ./build/
           cp -r ./src/ ./build/
           cp -r ./images/ ./build/
           cp -r ./demo/ ./build/
