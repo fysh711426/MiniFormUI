@@ -9,6 +9,7 @@ gulp.task('css', function () {
         './src/tooltip/tooltip.css',
         './src/progress/progress.css',
         './src/spinner/spinner.css',
+        './src/toast/toast.css',
         './src/layout/layout.css',
         './src/layout/layout-theme.css',
         './src/form/form.css',
