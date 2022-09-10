@@ -17,15 +17,23 @@ jobs:
 
       - name: Build
         run: |
+          # mkdir -p build
+          # rm -r ./.github/
+          # rm .gitignore
+          # rm LICENSE
+          # rm README.md
+          # sed -i 's/<base href="\/">/<base href="\/mini-form-ui\/">/g' *.html
+          # shopt -s extglob
+          # cp -r !(build) ./build/
+
           mkdir -p build
-          rm -r ./.github/
-          rm .gitignore
-          rm LICENSE
-          rm README.md
           sed -i 's/<base href="\/">/<base href="\/mini-form-ui\/">/g' *.html
-          shopt -s extglob
-          cp -r !(build) ./build/
-        
+          cp *.html ./build/
+          cp -r ./src/ ./build/
+          cp -r ./images/ ./build/
+          cp -r ./demo/ ./build/
+          cp -r ./dist/ ./build/
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
