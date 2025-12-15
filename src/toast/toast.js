@@ -13,19 +13,21 @@ var toast = (function () {
     }
     var global = null;
     return {
-        show: function(text) {
+        show: function(text, _settings) {
+            var setting = {};
+            _settings = _settings || {};
+            setting.template = _settings.template || '.toast-template';
+            setting.delay = _settings.delay || 3000;
+            
             text = text || '';
-            var templateHTML = `
-                <div class="toast-block">
-                    <div class="toast-inner">__data-content__</div>
-                </div>
-            `;
+            var templateHTML = document.querySelector(setting.template).innerHTML;
             var html = templateHTML;
             html = html.replace('__data-content__', text);
             if (global) {
                 remove(global);
             }
             var element = createElement(html);
+
             document.body.appendChild(element);
             global = element;
             (function(element) {
@@ -36,7 +38,7 @@ var toast = (function () {
                             remove(global);
                             element = null;
                         }
-                    }, 3000);
+                    }, setting.delay);
                 }, 1);
             })(element);
         }

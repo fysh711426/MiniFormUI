@@ -137,5 +137,8 @@ var popover = (function () {
             }
             close();
         });
+        return {
+            close: close
+        };
     }
 })();

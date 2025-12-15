@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="src/spinner/spinner.css">
     <link rel="stylesheet" href="src/button/button.css">
     <link rel="stylesheet" href="src/popover/popover.css">
+    <link rel="stylesheet" href="src/toast/toast.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
     <link rel="stylesheet" href="src/file/file.css">
@@ -27,6 +28,7 @@
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
     <script src="src/popover/popover.js"></script>
+    <script src="src/toast/toast.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
 </head>
@@ -81,7 +83,7 @@
                     <div class="board fw">
                         <div class="board-toolbar">
                             <div class="start">
-                                <button class="button" type="button">
+                                <button class="button" type="button" onclick="onButtonClick()">
                                     <i class="fa-solid fa-plus fa-fw"></i>
                                     <span>Create Group</span>
                                 </button>
@@ -125,7 +127,7 @@
                                         <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
                                     </a>
                                     <a class="bookmark-item-nav-button" href="javascript:void(0)"
-                                       data-content="bookmark01">
+                                       data-content="bookmark01" data-index="1">
                                         <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
                                     </a>
                                 </div>
@@ -149,7 +151,7 @@
                                         <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
                                     </a>
                                     <a class="bookmark-item-nav-button" href="javascript:void(0)"
-                                       data-content="bookmark02">
+                                       data-content="bookmark02" data-index="2">
                                         <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
                                     </a>
                                 </div>
@@ -173,7 +175,7 @@
                                         <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
                                     </a>
                                     <a class="bookmark-item-nav-button" href="javascript:void(0)"
-                                       data-content="bookmark03">
+                                       data-content="bookmark03" data-index="3">
                                         <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
                                     </a>
                                 </div>
@@ -198,21 +200,26 @@
     </div>
     <div class="popover-template popover-menu-style">
         <div class="popover-block">
-            <div class="popover-menu">
-                <div class="popover-menu-item">
+            <div class="popover-menu" data-index="__data-index__">
+                <div class="popover-menu-item" onclick="onEdit(this)">
                     <span class="popover-menu-item-icon">
                         <i class="fa-solid fa-pen fa-fw"></i>
                     </span>
                     <span class="popover-menu-item-text">Edit</span>
                 </div>
                 <div class="separator"></div>
-                <div class="popover-menu-item">
+                <div class="popover-menu-item" onclick="onDelete(this)">
                     <span class="popover-menu-item-icon">
                         <i class="fa-solid fa-trash fa-fw"></i>
                     </span>
                     <span class="popover-menu-item-text">Delete</span>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="toast-template">
+        <div class="toast-block">
+            <div class="toast-inner">__data-content__</div>
         </div>
     </div>
     <script>
@@ -264,13 +271,35 @@
             template: '.popover-template.tooltip-style',
             placement: 'bottom'
         });
+        var popovers = new Map();
         var bookmarkNavs = document.querySelectorAll('.bookmark-item-nav-button');
         for(var item of bookmarkNavs) {
-            popover(item, {
+            var pop = popover(item, {
                 template: '.popover-template.popover-menu-style',
                 placement: 'leftTop',
                 stopPropagation: true
             });
+            var index = item.getAttribute('data-index');
+            popovers.set(index, pop);
+        }
+        function onEdit(ele) {
+            var index = ele
+                .closest('.popover-menu').getAttribute('data-index');
+            var pop = popovers.get(index);
+            if (pop) {
+                pop.close();
+            }
+        }
+        function onDelete(ele) {
+            var index = ele
+                .closest('.popover-menu').getAttribute('data-index');
+            var pop = popovers.get(index);
+            if (pop) {
+                pop.close();
+            }
+        }
+        function onButtonClick() {
+            toast.show('Show Toast');
         }
     </script>
 </body>

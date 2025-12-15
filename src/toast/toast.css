@@ -11,21 +11,25 @@ body.dark {
     --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
 }
 
-.toast-block {
+.toast-inner {
     color: var(--toastColor);
     background-color: var(--toastBgColor);
     box-shadow: var(--toastShadow);
 }
 
+.toast-template {
+    display: none;
+}
+
 .toast-block {
     position: fixed;
-    border-radius: 0.45rem;
-    outline: 0;
-    box-sizing: border-box;
     transform: translateY(150%);
 }
 
 .toast-inner {
+    outline: 0;
+    border-radius: 0.45rem;
+    box-sizing: border-box;
     font-size: 1.1rem;
     line-height: 1.5;
     font-weight: normal;
