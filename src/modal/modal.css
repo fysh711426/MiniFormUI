@@ -1,0 +1,225 @@
+body.light {
+    --modalColor: #262626;
+    --modalBgColor: #fff;
+    --modalShadow: 0px 8px 12px 0px #00000014,0px 0px 1px 0px #0000009e;
+    --modalBackdropBgColor: rgba(255, 255, 255, .5);
+    --modalButtonColor: #fff;
+    --modalButtonBgColor: #3b3b3b;
+    --modalButtonHoverBgColor: rgba(48,48,48,.85);
+    --modalButtonActiveBgColor: rgba(48,48,48,.75);
+    --modalCancelButtonColor: #262626;
+    --modalCancelButtonBgColor: #f5f5f5;
+    --modalCancelButtonHoverBgColor: #e6e6e6;
+    --modalCancelButtonActiveBgColor: #f0f0f0;
+    --modalDropdownButtonColor: #262626;
+    --modalDropdownButtonBgColor: #0000;
+    --modalDropdownButtonHoverBgColor: #f5f5f5;
+    --modalDropdownButtonActiveBgColor: #f0f0f0;
+    --modalSeparatorBgColor: #0d0d0d1a;
+}
+
+body.dark {
+    --modalColor: #d2d3d5;
+    --modalBgColor: #212121;
+    --modalShadow: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e;
+    --modalBackdropBgColor: rgba(0, 0, 0, .5);
+    --modalButtonColor: #181818;
+    --modalButtonBgColor: #ececec;
+    --modalButtonHoverBgColor: rgba(255, 255, 255, .85);
+    --modalButtonActiveBgColor: rgba(255, 255, 255, .75);
+    --modalCancelButtonColor: #d2d3d5;
+    --modalCancelButtonBgColor: #2c2c2c;
+    --modalCancelButtonHoverBgColor: #3d3d3d;
+    --modalCancelButtonActiveBgColor: #353535;
+    --modalDropdownButtonColor: #d2d3d5;
+    --modalDropdownButtonBgColor: #0000;
+    --modalDropdownButtonHoverBgColor: #383838;
+    --modalDropdownButtonActiveBgColor: #2c2c2c;
+    /* --modalDropdownButtonHoverBgColor: #4a4a4a;
+    --modalDropdownButtonActiveBgColor: #3f3f3f; */
+    --modalSeparatorBgColor: #ffffff26;
+}
+
+.modal {
+    background-color: var(--modalBackdropBgColor);
+}
+
+.modal-block{
+    color: var(--modalColor);
+    background-color: var(--modalBgColor);
+    box-shadow: var(--modalShadow);
+}
+
+.modal-dropdown-button,
+.modal-close-button {
+    color: var(--modalDropdownButtonColor);
+    background-color: var(--modalDropdownButtonBgColor);
+}
+
+.modal-dropdown-button:hover,
+.modal-close-button:hover {
+    background-color: var(--modalDropdownButtonHoverBgColor);
+}
+
+.modal-dropdown-button:active,
+.modal-close-button:active {
+    background-color: var(--modalDropdownButtonActiveBgColor);
+}
+
+.modal-button {
+    color: var(--modalButtonColor);
+    background-color: var(--modalButtonBgColor);
+}
+
+.modal-button:hover {
+    background-color: var(--modalButtonHoverBgColor);
+}
+
+.modal-button:active {
+    background-color: var(--modalButtonActiveBgColor);
+}
+
+.modal-cancel-button {
+    color: var(--modalCancelButtonColor);
+    background-color: var(--modalCancelButtonBgColor);
+}
+
+.modal-cancel-button:hover {
+    background-color: var(--modalCancelButtonHoverBgColor);
+}
+
+.modal-cancel-button:active {
+    background-color: var(--modalCancelButtonActiveBgColor);
+}
+
+.modal-block .separator {
+    background-color: var(--modalSeparatorBgColor);
+}
+
+.modal-template {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    outline: 0;
+    /* pointer-events: none; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(1px);
+    z-index: 50000;
+}
+
+.modal-block {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 50001;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    border-radius: 1rem;
+    pointer-events: auto;
+    border: 0 solid;
+    max-width: 32rem;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.modal-container {
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 15px 20px; */
+    padding: 15px 20px 15px 20px;
+}
+
+.modal-header .start {
+    display: flex;
+    align-items: center;
+}
+
+.modal-header .end {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-header-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.modal-dropdown-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    border-radius: 50rem;
+    width: 43px;
+    height: 43px;
+    border: 0 solid;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.modal-close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    border-radius: .5rem;
+    width: 43px;
+    height: 43px;
+    border: 0 solid;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.modal-body {
+    padding: 0px 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px 20px;
+    gap: 10px;
+}
+
+.modal-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 0 solid;
+    font-size: 0.9rem;
+    line-height: 2;
+    font-weight: 700;
+    padding: 0 15px;
+    border-radius: 50rem;
+    height: 45px;
+    border: 0px solid;
+}
+
+.modal-block .separator {
+    height: 1px;
+    /* margin: 5px 20px;
+    transform: scaleY(1.2); */
+    margin: 5px 15px;
+    transform: scaleY(1.5);
+}

@@ -8,6 +8,7 @@ z-index
     file-video < 1024px = 30000
     file-image-nav = 16000
     file-image-content < 1024px = 15000
+    modal = 50000
 */
 
 /*----- font-awesome -----*/
