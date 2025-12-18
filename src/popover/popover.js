@@ -83,9 +83,11 @@ var popover = (function () {
             return;
         if (global.element.contains(e.target)) 
             return;
+        // if (document.body.style.position === 'fixed')
+        //     return;
         global.close();
     }, true);
-    return function (button, _settings) {
+    return function(button, _settings) {
         var setting = {};
         _settings = _settings || {};
         setting.template = _settings.template || '.popover-template';
@@ -114,8 +116,8 @@ var popover = (function () {
                 document.body.appendChild(element);
                 var position = getPosition(setting.placement, button, element);
                 
-                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+                var scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+                var scrollLeft = window.scrollX || document.documentElement.scrollLeft || document.body.scrollLeft;
                 element.style.transform = 'translate3d(' + (position[0] + scrollLeft) + 'px, ' + (position[1] + scrollTop) + 'px, 0px)';
             }
         }

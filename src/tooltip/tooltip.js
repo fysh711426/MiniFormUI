@@ -68,8 +68,8 @@ var tooltip = (function () {
                             mouseleave();
                         });
                         var position = getPosition(setting.placement, item, element);
-                        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                        var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+                        var scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+                        var scrollLeft = window.scrollX || document.documentElement.scrollLeft || document.body.scrollLeft;
                         element.style.transform = 'translate3d(' + (position[0] + scrollLeft) + 'px, ' + (position[1] + scrollTop) + 'px, 0px)';
                     }
                     if (global != null && global != element)

@@ -1,4 +1,6 @@
 body.light {
+    --scrollbarColor: #0000001a;
+    --scrollbarHoverColor: #0003;
     /* background-color: #f9f9f9; */
     --bgColor: #f5f5f5;
     --boardColor: #fff;
@@ -33,6 +35,8 @@ body.light {
 }
 
 body.dark {
+    --scrollbarColor: #ffffff1a;
+    --scrollbarHoverColor: #fff3;
     --bgColor: #181818;
     --boardColor: #303030;
     --boardShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);

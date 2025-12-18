@@ -11,6 +11,10 @@ body.light {
     --popoverMenuShadow: 0px 8px 12px 0px #00000014,0px 0px 1px 0px #0000009e;
     --popoverMenuHoverBgColor: #f5f5f5;
     --popoverMenuActiveBgColor: #f0f0f0;
+    --popoverDangerMenuColor: #e02e2a;
+    --popoverDangerMenuHoverBgColor: #e02e2a13;
+    --popoverDangerMenuActiveBgColor: #e02e2a1f;
+    --popoverDangerMenuOpenBgColor: #e02e2a0f;
     /*----- popover-menu-style -----*/
 
     --popoverSeparatorBgColor: #0d0d0d1a;
@@ -45,6 +49,10 @@ body.dark {
     --popoverMenuShadow: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e;
     --popoverMenuHoverBgColor: #4a4a4a;
     --popoverMenuActiveBgColor: #3f3f3f;
+    --popoverDangerMenuColor: #ff8583;
+    --popoverDangerMenuHoverBgColor: #e02e2a23;
+    --popoverDangerMenuActiveBgColor: #e02e2a2f;
+    --popoverDangerMenuOpenBgColor: #e02e2a16;
     /*----- popover-menu-style -----*/
 
     --popoverSeparatorBgColor: #ffffff26;
@@ -101,9 +109,12 @@ body.dark {
 /*----- popover-menu-style -----*/
 
 .popover-menu {
-    color: var(--popoverMenuColor);
     background-color: var(--popoverMenuBgColor);
     box-shadow: var(--popoverMenuShadow);
+}
+
+.popover-menu-item {
+    color: var(--popoverMenuColor);
 }
 
 .popover-menu-item:hover {
@@ -112,6 +123,18 @@ body.dark {
 
 .popover-menu-item:active {
     background-color: var(--popoverMenuActiveBgColor);
+}
+
+.popover-menu-item.danger {
+    color: var(--popoverDangerMenuColor);
+}
+
+.popover-menu-item.danger:hover {
+    background-color: var(--popoverDangerMenuHoverBgColor);
+}
+
+.popover-menu-item.danger:active {
+    background-color: var(--popoverDangerMenuActiveBgColor);
 }
 
 .popover-block .separator {

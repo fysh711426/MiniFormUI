@@ -10,7 +10,8 @@ z-index
 */
 
 /*----- scrollbar -----*/
-::-webkit-scrollbar {
+
+/* ::-webkit-scrollbar {
     width: 8px;
 }
 
@@ -22,7 +23,31 @@ z-index
 ::-webkit-scrollbar-track {
     background: #ddd;
     border-radius: 20px;
+} */
+
+html {
+    scrollbar-color: #606060 transparent;
 }
+
+/* html {
+    overflow: hidden;
+}
+
+body {
+    overflow: auto;
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        scrollbar-gutter: stable;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    body {
+        scrollbar-gutter: stable both-edges;
+    }
+} */
 
 /*----- scrollbar -----*/
 
