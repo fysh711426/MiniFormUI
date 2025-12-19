@@ -154,10 +154,10 @@
 /*----- board-toolbar -----*/
 
 .bookmark-group-children {
-    animation: .2s cubic-bezier(.16, 1, .3, 1) slideDownAndFade;
+    animation: .2s cubic-bezier(.16, 1, .3, 1) bookmarkSlideDownAndFade;
 }
 
-@keyframes slideDownAndFade {
+@keyframes bookmarkSlideDownAndFade {
     0% {
         opacity: 0;
         transform: translateY(-1px);

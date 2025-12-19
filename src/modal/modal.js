@@ -27,7 +27,7 @@ var modal = (function () {
         document.body.style.top = '';
         document.body.style.minWidth = '';
         document.body.style.paddingRight = '';
-        window.scrollTo(0, scrollY);
+        window.scrollTo({ top: scrollY });
     }
     return function(template, _settings) {
         var setting = {};

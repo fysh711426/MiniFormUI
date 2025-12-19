@@ -19,7 +19,7 @@ function fileNavbar(setting) {
 
     // gotop
     function getScrollTop() {
-        return document.documentElement.scrollTop || document.body.scrollTop;
+        return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
     }
     function showHide(element, isShow) {
         if (element) {

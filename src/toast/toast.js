@@ -32,7 +32,7 @@ var toast = (function () {
             global = element;
             (function(element) {
                 setTimeout(function() {
-                    element.className = element.className + ' show';
+                    element.classList.add('show');
                     setTimeout(function() {
                         if (element === global) {
                             remove(global);

@@ -261,10 +261,10 @@ body.dark {
 }
 
 .modal-backdrop {
-    animation: .25s cubic-bezier(.4, 0, .2, 1) slideDownAndFade;
+    animation: .25s cubic-bezier(.4, 0, .2, 1) modalSlideDownAndFade;
 }
 
-@keyframes slideDownAndFade {
+@keyframes modalSlideDownAndFade {
     0% {
         opacity: 0;
         transform: translateY(-1px);
