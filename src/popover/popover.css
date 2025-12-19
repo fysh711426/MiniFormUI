@@ -164,6 +164,10 @@ body.dark {
     font-weight: 700;
 }
 
+.popover-menu-item.selected {
+    padding-right: 12px;
+}
+
 .popover-menu-item-icon {
     margin-right: 12px;
     flex: none;
@@ -174,6 +178,15 @@ body.dark {
     flex-basis: 0.000000001px;
     white-space: nowrap;
     -webkit-font-smoothing: initial;
+}
+
+.popover-menu-item-trailing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    margin-left: 24px;
 }
 
 .popover-block .separator {
