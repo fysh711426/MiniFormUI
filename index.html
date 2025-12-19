@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="src/tooltip/tooltip.css">
     <link rel="stylesheet" href="src/progress/progress.css">
     <link rel="stylesheet" href="src/spinner/spinner.css">
+    <link rel="stylesheet" href="src/gotop/gotop.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
     <link rel="stylesheet" href="index.css">
@@ -19,6 +20,7 @@
     <script src="src/tooltip/tooltip.js"></script>
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
+    <script src="src/gotop/gotop.js"></script>
     <script src="src/layout/layout.js"></script>
 
     <script>
@@ -84,10 +86,44 @@
         <div class="container">
             <div class="left-menu active">
                 <div class="left-menu-inner">
-                    <a href="" select-val="Main" class="left-menu-item">Main</a>
-                    <a href="form.html" select-val="Form" class="left-menu-item">Form</a>
-                    <a href="file.html" select-val="File" class="left-menu-item">File</a>
-                    <a href="file-bookmark.html" select-val="File" class="left-menu-item">Bookmark</a>
+                    <a href="" select-val="Main" class="left-menu-item round">Main</a>
+                    <a href="form.html" select-val="Form" class="left-menu-item round">Form</a>
+                    <a href="file.html" select-val="File" class="left-menu-item round">File</a>
+                    <div class="separator"></div>
+                    <div class="left-menu-group close">
+                        <div class="left-menu-group-title">
+                            <span>Group</span>
+                            <span class="left-menu-group-expand">
+                                <i class="fa-solid fa-angle-down fa-fw"></i>
+                            </span>
+                            <span class="left-menu-group-collapse">
+                                <i class="fa-solid fa-angle-right fa-fw"></i>
+                            </span>
+                        </div>
+                        <div class="left-menu-group-children">
+                            <a href="file-bookmark.html" select-val="Bookmark" class="left-menu-item round">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                                <span>Bookmark</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="left-menu-group close">
+                        <div class="left-menu-group-title">
+                            <span>Group</span>
+                            <span class="left-menu-group-expand">
+                                <i class="fa-solid fa-angle-down fa-fw"></i>
+                            </span>
+                            <span class="left-menu-group-collapse">
+                                <i class="fa-solid fa-angle-right fa-fw"></i>
+                            </span>
+                        </div>
+                        <div class="left-menu-group-children">
+                            <a href="file-bookmark.html" select-val="Test" class="left-menu-item round">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                                <span>Test</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="left-menu-mask" onclick="onNavClose()"></div>
@@ -95,10 +131,10 @@
                 <div class="main-inner">
                     <div class="sub-menu">
                         <div class="sub-menu-inner">
-                            <a href="" select-val="Item1" class="sub-menu-item">Item1</a>
-                            <a href="" select-val="Item2" class="sub-menu-item">Item2</a>
-                            <a href="" select-val="Item3" class="sub-menu-item">Item3</a>
-                            <a href="" select-val="Item4" class="sub-menu-item">Item4</a>
+                            <a href="" select-val="Item1" class="sub-menu-item round">Item1</a>
+                            <a href="" select-val="Item2" class="sub-menu-item round">Item2</a>
+                            <a href="" select-val="Item3" class="sub-menu-item round">Item3</a>
+                            <a href="" select-val="Item4" class="sub-menu-item round">Item4</a>
                         </div>
                     </div>
                     <div class="board">
