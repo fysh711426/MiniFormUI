@@ -337,13 +337,13 @@
             var id = board.getAttribute('id');
             if (selected) {
                 var prev = document.querySelector('#' + selected);
-                prev.className = prev.className.replace(' active', '');
+                prev.classList.remove('active');
             }
             if (id === selected) {
                 selected = null;
                 return;
             }
-            board.className = board.className + ' active';
+            board.classList.add('active');
             selected = id;
         }
         var groupNav = document.querySelector('.bookmark-group-nav-button');

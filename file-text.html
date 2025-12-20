@@ -58,7 +58,7 @@
         <div class="container">
             <div class="main file-main">
                 <div class="main-inner">
-                    <div class="board file-navbar sticky">
+                    <div class="board file-navbar sticky over">
                         <div class="start mw-1x">
                             <a href="file.html" class="file-navbar-btn">
                                 <i class="fa-solid fa-arrow-left fa-fw"></i>
@@ -105,10 +105,8 @@
         setTimeout(function () {
             progress.done();
         }, 1000);
-        fileNavbar({
-            enableHover: true,
-            enableTextOver: true
-        });
+        fileNavbar.enableHover();
+        fileNavbar.enableTextOver();
         var themes = [
             'text-dark', 'text-dark-blue',
             'text-light', 'text-gray', 'text-yellow',

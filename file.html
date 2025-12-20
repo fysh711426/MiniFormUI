@@ -66,7 +66,7 @@
         <div class="container">
             <div class="main file-main">
                 <div class="main-inner">
-                    <div class="board file-navbar sticky">
+                    <div class="board file-navbar sticky over">
                         <div class="start mw-1x">
                             <a href="javascript:void(0)" class="file-navbar-btn">
                                 <i class="fa-solid fa-arrow-left fa-fw"></i>
@@ -231,19 +231,18 @@
             var id = board.getAttribute('id');
             if (selected) {
                 var prev = document.querySelector('#' + selected);
-                prev.className = prev.className.replace(' active', '');
+                prev.classList.remove('active');
             }
             if (id === selected) {
                 selected = null;
                 return;
             }
-            board.className = board.className + ' active';
+            board.classList.add('active');
             selected = id;
         }
-        fileNavbar({
-            enableHover: true,
-            enableImageOver: true
-        });
+        fileNavbar.enableHover();
+        fileNavbar.enableExpand();
+        fileNavbar.enableImageOver();
         var theme = document.body.getAttribute('theme');
         onThemeButtonChange(theme);
         function toggleTheme() {

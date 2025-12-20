@@ -136,7 +136,7 @@
                     <div class="board fw form">
                         <!-- <div class="hr"></div> -->
                         <div class="form-field-title">Version</div>
-                        <div class="form-field-description">• 1.0.0</div>
+                        <div class="form-field-description">1.0.0</div>
                     </div>
                 </div>
                 <div class="footer">
@@ -147,6 +147,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="toast-template">
+        <div class="toast-block">
+            <div class="toast-inner">__data-content__</div>
         </div>
     </div>
     <script>
@@ -164,13 +169,14 @@
         function onChecked(element) {
             var checkbox = element.querySelector('input');
             var mark = element.querySelector('.checkbox-mark');
-            if (mark.className.indexOf('checked') === -1) {
+
+            if (!mark.classList.contains('checked')) {
                 checkbox.setAttribute('checked', '');
-                mark.className = mark.className + ' checked';
+                mark.classList.add('checked');
             }
             else {
                 checkbox.removeAttribute('checked');
-                mark.className = mark.className.replace('checked', '');;
+                mark.classList.remove('checked');
             }
             toast.show('Saved');
         }
@@ -180,17 +186,16 @@
         function onThemeChecked(element) {
             var sample = document.querySelector('.theme-sample-text');
             var circles = document.querySelectorAll('.theme-circle');
-            for (var i = 0; i < circles.length; i++) {
-                var item = circles[i];
+            for (var item of circles) {
                 var val = element.getAttribute('data-val');
                 if (item.getAttribute('data-val') === val) {
-                    if (item.className.indexOf('checked') === -1) {
-                        element.className = element.className + ' checked';
+                    if (!item.classList.contains('checked')) {
+                        element.classList.add('checked');
                         sample.className = 'theme-sample-text show ' + val;
                     }
                 }
                 else {
-                    item.className = item.className.replace(' checked', '');
+                    item.classList.remove('checked');
                 }
             }
         }

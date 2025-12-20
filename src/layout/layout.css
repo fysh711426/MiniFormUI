@@ -210,8 +210,16 @@ a {
     display: none;
 }
 
+.theme-button-light.show {
+    display: flex;
+}
+
 .theme-button-dark {
     display: none;
+}
+
+.theme-button-dark.show {
+    display: flex;
 }
 
 .theme-button-icon {
