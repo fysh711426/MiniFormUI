@@ -15,11 +15,11 @@ var toast = (function () {
     return {
         show: function(text, _settings) {
             var setting = {};
-            _settings = _settings || {};
-            setting.template = _settings.template || '.toast-template';
-            setting.delay = _settings.delay || 3000;
+            _settings = _settings ?? {};
+            setting.template = _settings.template ?? '.toast-template';
+            setting.delay = _settings.delay ?? 3000;
             
-            text = text || '';
+            text = text ?? '';
             var templateHTML = document.querySelector(setting.template).innerHTML;
             var html = templateHTML;
             html = html.replace('__data-content__', text);

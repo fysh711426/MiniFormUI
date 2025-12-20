@@ -4,8 +4,8 @@ var gotop = (function () {
     }
     return function (selector, _settings) {
         var setting = {};
-        _settings = _settings || {};
-        setting.scrollTop = _settings.scrollTop || 75;
+        _settings = _settings ?? {};
+        setting.scrollTop = _settings.scrollTop ?? 75;
         setting.delay = _settings.delay;
 
         var gotop = document.querySelector(selector);

@@ -31,7 +31,7 @@ var modal = (function () {
     }
     return function(template, _settings) {
         var setting = {};
-        _settings = _settings || {};
+        _settings = _settings ?? {};
 
         var ref = {
             open: open,

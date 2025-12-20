@@ -89,9 +89,9 @@ var popover = (function () {
     }, true);
     return function(button, _settings) {
         var setting = {};
-        _settings = _settings || {};
-        setting.template = _settings.template || '.popover-template';
-        setting.placement = _settings.placement || 'bottom';
+        _settings = _settings ?? {};
+        setting.template = _settings.template ?? '.popover-template';
+        setting.placement = _settings.placement ?? 'bottom';
         setting.preventDefault = _settings.preventDefault ?? false;
         setting.stopPropagation = _settings.stopPropagation ?? false;
         var templateHTML = document.querySelector(setting.template).innerHTML;

@@ -37,9 +37,9 @@ var tooltip = (function () {
     var global = null;
     return function (selector, _settings) {
         var setting = {};
-        _settings = _settings || {};
-        setting.template = _settings.template || '.tooltip-template';
-        setting.placement = _settings.placement || 'bottom';
+        _settings = _settings ?? {};
+        setting.template = _settings.template ?? '.tooltip-template';
+        setting.placement = _settings.placement ?? 'bottom';
         var templateHTML = document.querySelector(setting.template).innerHTML;
         var items = document.querySelectorAll(selector);
         for (var i = 0; i < items.length; i++) {
