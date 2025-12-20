@@ -136,7 +136,7 @@ a:hover .file-item-icon {
     }
 }
 
-.file-navbar-title-warp.hover .file-navbar-title-over {
+.file-navbar-title-wrap.hover .file-navbar-title-over {
     background-color: var(--fileNavbarOverBgColor);
     border-color: var(--fileNavbarOverBorderColor);
     box-shadow: var(--fileNavbarOverShadow);

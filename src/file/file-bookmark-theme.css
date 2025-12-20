@@ -23,8 +23,8 @@ body.dark {
 /*----- bookmark-item -----*/
 
 .bookmark-item {
-    background-color: var(--checkboxWarpColor);
-    border-color: var(--checkboxWarpBorderColor);
+    background-color: var(--checkboxWrapColor);
+    border-color: var(--checkboxWrapBorderColor);
 }
 
 /*.bookmark-item-description {
