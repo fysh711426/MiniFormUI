@@ -1,22 +1,13 @@
-
 var gotop = (function () {
     function getScrollTop() {
         return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
     }
-    var onScroll = function (callback, delay) {
-        var scheduled = false;
-        delay = delay || 100;
-        document.addEventListener('scroll', function () {
-            if (!scheduled) {
-                scheduled = true;
-                setTimeout(function () {
-                    callback.call(this);
-                    scheduled = false;
-                }, delay);
-            }
-        });
-    }
-    return function (selector) {
+    return function (selector, _settings) {
+        var setting = {};
+        _settings = _settings || {};
+        setting.scrollTop = _settings.scrollTop || 75;
+        setting.delay = _settings.delay;
+
         var gotop = document.querySelector(selector);
         gotop.addEventListener("click", function (e) {
             e.preventDefault();
@@ -35,12 +26,11 @@ var gotop = (function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         onScroll(function () {
-            var scrollY = getScrollTop();
-            if (scrollY < 200) {
-                gotop.classList.remove('show');
-            } else {
+            if (getScrollTop() > setting.scrollTop) {
                 gotop.classList.add('show');
+            } else {
+                gotop.classList.remove('show');
             }
-        });
+        }, setting.delay);
     }
 })();

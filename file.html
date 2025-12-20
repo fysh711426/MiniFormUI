@@ -68,11 +68,9 @@
                 <div class="main-inner">
                     <div class="board file-navbar sticky">
                         <div class="start mw-1x">
-                            <div class="file-navbar-btn">
-                                <a href="javascript:void(0)">
-                                    <i class="fa-solid fa-arrow-left fa-fw"></i>
-                                </a>
-                            </div>
+                            <a href="javascript:void(0)" class="file-navbar-btn">
+                                <i class="fa-solid fa-arrow-left fa-fw"></i>
+                            </a>
                             <div class="file-navbar-title-warp mw-1x">
                                 <div class="file-navbar-title">Title</div>
                                 <div class="file-navbar-title-over-warp">
@@ -82,18 +80,16 @@
                         </div>
                         <div></div>
                         <div class="end">
-                            <div class="file-navbar-btn file-navbar-toggle show">
-                                <a href="javascript:void(0)">
-                                    <span class="up">
+                            <div class="file-navbar-gotop-wrap">
+                                <a href="javascript:void(0)" class="file-navbar-btn file-navbar-toggle">
+                                    <span class="collapse">
                                         <i class="fa-solid fa-angle-up fa-fw"></i>
                                     </span>
-                                    <span class="down">
+                                    <span class="expand">
                                         <i class="fa-solid fa-angle-down fa-fw"></i>
                                     </span>
                                 </a>
-                            </div>
-                            <div class="file-navbar-btn file-navbar-gotop">
-                                <a href="javascript:void(0)">
+                                <a href="javascript:void(0)" class="file-navbar-btn file-navbar-gotop">
                                     <i class="fa-regular fa-circle-up fa-fw"></i>
                                 </a>
                             </div>
@@ -101,25 +97,28 @@
                     </div>
                     <div class="block file-navbar-expand">
                         <div class="start">
-                            <!-- <div class="file-navbar-expand-title">Files</div> -->
                         </div>
                         <div></div>
                         <div class="end">
-                            <div class="file-navbar-btn">
-                                <a href="javascript:void(0)">
-                                    <div class="file-navbar-btn-warp">
-                                        <i class="fa-solid fa-table-list fa-fw"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="file-navbar-btn">
-                                <a href="javascript:void(0)">
-                                    <div class="file-navbar-btn-warp">
-                                        <i class="fa-solid fa-down-long fa-fw"></i>
-                                        <span class="file-navbar-btn-text">Name</span>
-                                    </div>
-                                </a>
-                            </div>
+                            <a href="javascript:void(0)" class="file-navbar-btn">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                                <span class="file-navbar-btn-text">Save</span>
+                            </a>
+                            <a href="javascript:void(0)" class="file-navbar-btn">
+                                <i class="fa-solid fa-eye fa-fw"></i>
+                                <span class="file-navbar-btn-text">Browse</span>
+                            </a>
+                            <a href="javascript:void(0)" class="file-navbar-btn">
+                                <i class="fa-solid fa-image fa-fw"></i>
+                                <span class="file-navbar-btn-text">100%</span>
+                            </a>
+                            <a href="javascript:void(0)" class="file-navbar-btn">
+                                <i class="fa-solid fa-pen fa-fw"></i>
+                                <span class="file-navbar-btn-text">Name</span>
+                            </a>
+                            <a href="javascript:void(0)" class="file-navbar-btn">
+                                <i class="fa-solid fa-arrow-down-short-wide fa-fw"></i>
+                            </a>
                         </div>
                     </div>
                     <div>
@@ -219,13 +218,8 @@
             </div>
         </div>
     </div>
-    <div class="control">
-        <a class="button gotop" href="javascript:void(0)">
-            <i class="fa-solid fa-angle-up"></i>
-        </a>
-    </div>
     <script>
-        gotop('.gotop');
+        gotop('.file-navbar-gotop-wrap');
         spinner('.spinner');
         progress.start();
         setTimeout(function() {

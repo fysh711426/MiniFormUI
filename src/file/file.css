@@ -20,14 +20,6 @@ z-index
 
 /*----- font-awesome -----*/
 
-/*----- gotop -----*/
-
-.control .gotop.show {
-    display: none;
-}
-
-/*----- gotop -----*/
-
 /*----- file-main -----*/
 
 @media screen and (max-width: 1330px) {
@@ -293,17 +285,15 @@ z-index
 }
 
 .file-navbar-btn {
-    padding: 0px 5px;
-}
-
-.file-navbar-btn-warp {
     display: flex;
     align-items: center;
+    padding: 0px 5px;
 }
 
 .file-navbar-btn-text {
     font-size: 0.8rem;
     padding-left: 5px;
+    padding-right: 7px;
 }
 
 .file-navbar-title {
@@ -410,45 +400,41 @@ z-index
 
 /*----- file-navbar-expand -----*/
 
-/*----- file-navbar-toggle -----*/
+/*----- file-navbar-gotop-wrap -----*/
 
-.file-navbar-toggle {
-    display: none;
-}
-
-.file-navbar-toggle.show {
+.file-navbar-gotop-wrap .file-navbar-toggle {
     display: block;
 }
 
-.file-navbar-toggle .up {
+.file-navbar-gotop-wrap.show .file-navbar-toggle {
     display: none;
 }
 
-.file-navbar-toggle.open .up {
-    display: inline;
-}
-
-.file-navbar-toggle .down {
-    display: inline;
-}
-
-.file-navbar-toggle.open .down {
+.file-navbar-gotop-wrap .file-navbar-gotop {
     display: none;
 }
 
-/*----- file-navbar-toggle -----*/
-
-/*----- file-navbar-gotop -----*/
-
-.file-navbar-gotop {
-    display: none;
-}
-
-.file-navbar-gotop.show {
+.file-navbar-gotop-wrap.show .file-navbar-gotop {
     display: block;
 }
 
-/*----- file-navbar-gotop -----*/
+.file-navbar-toggle .collapse {
+    display: none;
+}
+
+.file-navbar-toggle.open .collapse {
+    display: inline;
+}
+
+.file-navbar-toggle .expand {
+    display: inline;
+}
+
+.file-navbar-toggle.open .expand {
+    display: none;
+}
+
+/*----- file-navbar-gotop-wrap -----*/
 
 /*----- file-video-warp -----*/
 
@@ -529,12 +515,12 @@ z-index
     color: #d2d3d5;
 }
 
-.image-main .file-navbar-btn a {
+.image-main .file-navbar-btn {
     color: #d2d3d5;
 }
 
 @media screen and (min-width: 1025px) {
-    .image-main .file-navbar-btn a:hover {
+    .image-main .file-navbar-btn:hover {
         color: #fff;
     }
 }

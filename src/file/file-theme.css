@@ -131,7 +131,7 @@ a:hover .file-item-icon {
 }
 
 @media screen and (min-width: 1025px) {
-    .file-navbar-btn a:hover {
+    .file-navbar-btn:hover {
         color: var(--fileNavbarLinkHoverColor);
     }
 }

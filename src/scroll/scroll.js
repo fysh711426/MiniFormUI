@@ -3,7 +3,7 @@
 
 var onScrollEnd = (function () {
     function getScrollTop() {
-        return Math.max(window.pageYOffset || 0,
+        return Math.max(window.scrollY || 0,
             document.documentElement.scrollTop || document.body.scrollTop);
     }
     function getScrollHeight() {
@@ -17,7 +17,7 @@ var onScrollEnd = (function () {
         return Math.max(window.innerHeight || 0,
             document.documentElement.clientHeight || document.body.clientHeight);
     }
-    return function (callback, distance, delay) {
+    return function(callback, distance, delay) {
         distance = distance || 0;
         onScroll(function () {
             if (getScrollTop() + getClientHeight() + distance >= getScrollHeight()) {
