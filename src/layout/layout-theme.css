@@ -194,11 +194,11 @@ a:active {
     }
 }
 
-.left-menu-group-title {
+.left-menu .left-menu-group-title {
     color: var(--leftMenuGroupTitleColor);
 }
 
-.left-menu-group-title:hover {
+.left-menu .left-menu-group-title:hover {
     color: var(--leftMenuGroupTitleHoverColor);
 }
 

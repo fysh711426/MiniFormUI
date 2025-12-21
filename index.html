@@ -90,37 +90,20 @@
                     <a href="form.html" select-val="Form" class="left-menu-item round">Form</a>
                     <a href="file.html" select-val="File" class="left-menu-item round">File</a>
                     <div class="separator"></div>
-                    <div class="left-menu-group close">
-                        <div class="left-menu-group-title">
+                    <div class="left-menu-group open">
+                        <a class="left-menu-group-title" href="javascript:void(0)">
                             <span>Group</span>
-                            <span class="left-menu-group-expand">
+                            <span class="left-menu-group-toggle expand">
                                 <i class="fa-solid fa-angle-down fa-fw"></i>
                             </span>
-                            <span class="left-menu-group-collapse">
+                            <span class="left-menu-group-toggle collapse">
                                 <i class="fa-solid fa-angle-right fa-fw"></i>
                             </span>
-                        </div>
+                        </a>
                         <div class="left-menu-group-children">
                             <a href="file-bookmark.html" select-val="Bookmark" class="left-menu-item round">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                                 <span>Bookmark</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="left-menu-group close">
-                        <div class="left-menu-group-title">
-                            <span>Group</span>
-                            <span class="left-menu-group-expand">
-                                <i class="fa-solid fa-angle-down fa-fw"></i>
-                            </span>
-                            <span class="left-menu-group-collapse">
-                                <i class="fa-solid fa-angle-right fa-fw"></i>
-                            </span>
-                        </div>
-                        <div class="left-menu-group-children">
-                            <a href="file-bookmark.html" select-val="Test" class="left-menu-item round">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                                <span>Test</span>
                             </a>
                         </div>
                     </div>
@@ -356,6 +339,7 @@
     <script>
         selectMenu('Main');
         selectSubMenu('Item1');
+        enableMenuGroup();
         tooltip('.header-tooltip');
         tooltip('.video-tooltip', {
             template: '.video-tooltip-template',

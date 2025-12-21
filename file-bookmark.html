@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="src/form/form.css">
     <link rel="stylesheet" href="src/form/form-theme.css">
     <link rel="stylesheet" href="src/file/file-bookmark.css">
-    <link rel="stylesheet" href="src/file/file-bookmark-theme.css">
     <script src="src/theme/theme.js"></script>
     <script src="src/scroll/scroll.js"></script>
     <script src="src/tooltip/tooltip.js"></script>
@@ -96,12 +95,16 @@
                         </div>
                     </div>
                     
-                    <div class="board fw bookmark-group">
+                    <div class="board fw bookmark-group open">
                         <div class="bookmark-group-title">
                             <div class="start">
-                                <i class="fa-solid fa-angle-down fa-fw" style="display:inline-block"></i>
-                                <i class="fa-solid fa-angle-right fa-fw" style="display:none"></i>
-                                <a class="bookmark-group-title-text" href="javascript:void(0)" data-show-items="true" onclick="onBookmarkGroupClick(this)">
+                                <span class="expand">
+                                    <i class="fa-solid fa-angle-down fa-fw"></i>
+                                </span>
+                                <span class="collapse">
+                                    <i class="fa-solid fa-angle-right fa-fw"></i>
+                                </span>
+                                <a class="bookmark-group-title-text" href="javascript:void(0)" onclick="onBookmarkGroupClick(this)">
                                     <span>Other</span>
                                 </a>
                             </div>
@@ -311,25 +314,8 @@
             onThemeChange(theme);
         }
         function onBookmarkGroupClick(ele) {
-            var showItems = ele.getAttribute('data-show-items') === 'true';
-            showItems = !showItems;
-
             var group = ele.closest('.bookmark-group');
-            var children = group.querySelector('.bookmark-group-children');
-            var down = group.querySelector('.bookmark-group-title .fa-angle-down');
-            var right = group.querySelector('.bookmark-group-title .fa-angle-right');
-            
-            if (showItems) {
-                children.style = 'display:block';
-                down.style = 'display:inline-block';
-                right.style = 'display:none';
-            }
-            else {
-                children.style = 'display:none';
-                down.style = 'display:none';
-                right.style = 'display:inline-block';
-            }
-            ele.setAttribute('data-show-items', showItems);
+            group.classList.toggle('open');
         }
         var selected = null;
         function onBookmarkClick(ele) {
