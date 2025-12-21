@@ -1,4 +1,4 @@
-name: gulp build
+name: run gulp build
 on:
   workflow_dispatch:
       
