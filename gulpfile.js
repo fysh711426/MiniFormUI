@@ -6,10 +6,15 @@ var rename = require("gulp-rename");
 
 gulp.task('css', function () {
     return gulp.src([
+        './src/button/button.css',
+        './src/alert/alert.css',
         './src/tooltip/tooltip.css',
         './src/progress/progress.css',
         './src/spinner/spinner.css',
         './src/toast/toast.css',
+        './src/popover/popover.css',
+        './src/modal/modal.css',
+        './src/gotop/gotop.css',
         './src/layout/layout.css',
         './src/layout/layout-theme.css',
         './src/form/form.css',
@@ -34,7 +39,8 @@ gulp.task('file-css', function () {
         './src/file/file.css',
         './src/file/file-theme.css',
         './src/file/file-video-player.css',
-        './src/file/file-text-theme.css'
+        './src/file/file-text-theme.css',
+        './src/file/file-bookmark.css'
     ])
     .pipe(concat('mini-form-ui-file.css'))
     .pipe(gulp.dest('./dist/'));
@@ -58,6 +64,9 @@ gulp.task('script', function () {
         './src/progress/progress.js',
         './src/spinner/spinner.js',
         './src/toast/toast.js',
+        './src/popover/popover.js',
+        './src/modal/modal.js',
+        './src/gotop/gotop.js',
         './src/layout/layout.js'
     ])
     .pipe(concat('mini-form-ui.js'))

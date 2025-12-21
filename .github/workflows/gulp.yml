@@ -1,0 +1,28 @@
+name: gulp build
+on:
+  workflow_dispatch:
+      
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+          
+      - name: Run Gulp
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm run gulp
+
+      - name: Commit
+        run: |
+          git config user.name "fysh711426"
+          git config user.email "fysh711426@gmail.com"
+          git add dist/
+          git diff --cached --quiet || git commit -m "auto commit"
+          git push origin master
