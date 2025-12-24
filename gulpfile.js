@@ -19,6 +19,7 @@ gulp.task('css', function () {
         './src/search/search.css',
         './src/layout/layout.css',
         './src/layout/layout-theme.css',
+        './src/layout/layout-nav-link.css',
         './src/form/form.css',
         './src/form/form-theme.css'
     ])
@@ -40,6 +41,7 @@ gulp.task('file-css', function () {
     return gulp.src([
         './src/file/file.css',
         './src/file/file-theme.css',
+        './src/file/file-item.css',
         './src/file/file-image-item.css',
         './src/file/file-video-player.css',
         './src/file/file-text-theme.css',
