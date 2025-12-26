@@ -20,6 +20,7 @@ gulp.task('css', function () {
         './src/layout/layout.css',
         './src/layout/layout-theme.css',
         './src/layout/layout-nav-link.css',
+        './src/layout/layout-left-menu.css',
         './src/form/form.css',
         './src/form/form-theme.css'
     ])
@@ -66,6 +67,7 @@ gulp.task('script', function () {
     return gulp.src([
         './src/theme/theme.js',
         './src/scroll/scroll.js',
+        './src/scroll/resize.js',
         './src/tooltip/tooltip.js',
         './src/progress/progress.js',
         './src/spinner/spinner.js',

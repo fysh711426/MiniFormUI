@@ -6,14 +6,23 @@
     border-top-color: var(--leftMenuBorderTop);
 }
 
-.left-menu .separator {
-    background-color: var(--leftMenuSeparatorBgColor);
+.left-menu-scrollable {
+    /* scrollbar-color: var(--scrollbarColor) transparent; */
+    scrollbar-color: transparent transparent;
+}
+
+.left-menu-scrollable:hover {
+    scrollbar-color: var(--scrollbarHoverColor) transparent;
 }
 
 @media screen and (max-width: 1330px) {
     .left-menu.open {
         border-top-color: var(--leftMenuOpenBorderTop);
     }
+}
+
+.left-menu .separator {
+    background-color: var(--leftMenuSeparatorBgColor);
 }
 
 .left-menu-item i {
@@ -91,6 +100,23 @@
         height: 100vh;
         z-index: 5199;
         background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.left-menu-scrollable {
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+@media screen and (min-width: 1331px) {
+    .left-menu-scrollable {
+        max-height: calc(100vh - 75px - 15px - 3px);
+    }
+}
+
+@media screen and (max-width: 1330px) {
+    .left-menu-scrollable {
+        max-height: calc(100vh - 60px);
     }
 }
 
