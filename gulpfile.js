@@ -16,6 +16,7 @@ gulp.task('css', function () {
         './src/popover/popover.css',
         './src/modal/modal.css',
         './src/gotop/gotop.css',
+        './src/collapse/collapse.css',
         './src/search/search.css',
         './src/layout/layout.css',
         './src/layout/layout-theme.css',
@@ -75,6 +76,7 @@ gulp.task('script', function () {
         './src/popover/popover.js',
         './src/modal/modal.js',
         './src/gotop/gotop.js',
+        './src/collapse/collapse.js',
         './src/search/search.js',
         './src/layout/layout.js'
     ])
