@@ -31,8 +31,8 @@ var onNavClose = null;
             bodyScroll.lock();
         }
         else {
-            // var main = document.querySelector('.main');
-            // main.classList.add('active');
+            var main = document.querySelector('.main');
+            main.classList.add('active');
         }
         var handler = function () {
             element.classList.remove(ingClass);
@@ -80,8 +80,8 @@ var onNavClose = null;
             bodyScroll.unlock();
         }
         else {
-            // var main = document.querySelector('.main');
-            // main.classList.remove('active');
+            var main = document.querySelector('.main');
+            main.classList.remove('active');
         }
         var handler = function () {
             element.classList.remove(ingClass);
