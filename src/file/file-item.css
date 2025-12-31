@@ -201,7 +201,7 @@ a:hover .file-item-icon {
     .file-item-trailing .badge-circle-number {
         font-size: 13px;
         line-height: 13px;
-        padding-top: 3.5px;
+        padding-top: 3.3px;
     }
     /*----- .badge-circle-number.sm -----*/
 
@@ -209,7 +209,7 @@ a:hover .file-item-icon {
     .file-item-trailing .badge-circle-check {
         font-size: 14px;
         line-height: 14px;
-        padding-top: 3.5px;
+        padding-top: 3.3px;
     }
     /*----- .badge-circle-check.sm -----*/
 }

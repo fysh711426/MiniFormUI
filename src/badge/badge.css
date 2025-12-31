@@ -82,25 +82,25 @@ body.dark {
 .badge-circle-number {
     font-size: 15px;
     line-height: 15px;
-    padding: 4px 6px 0px 6px;
+    padding: 4.5px 6px 0px 6px;
 }
 
 .badge-circle-check {
     font-size: 15px;
     line-height: 15px;
-    padding: 4px 0px 0px 0px;
+    padding: 4.5px 0px 0px 0px;
 }
 
 .badge-circle-number.sm {
     font-size: 13px;
     line-height: 13px;
-    padding-top: 3.5px;
+    padding-top: 3.3px;
 }
 
 .badge-circle-check.sm {
     font-size: 13px;
     line-height: 13px;
-    padding-top: 3.5px;
+    padding-top: 3.3px;
 }
 
 /*----- badge-circle -----*/

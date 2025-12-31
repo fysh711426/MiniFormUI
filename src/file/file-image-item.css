@@ -386,7 +386,7 @@ body.dark {
     .file-image-item-floating .badge-circle-number {
         font-size: 13px;
         line-height: 13px;
-        padding-top: 3.5px;
+        padding-top: 3.3px;
     }
     /*----- .badge-circle-number.sm -----*/
 
@@ -394,12 +394,12 @@ body.dark {
     .file-image-item-trailing .badge-circle-check {
         font-size: 14px;
         line-height: 14px;
-        padding-top: 3.5px;
+        padding-top: 3.3px;
     }
     .file-image-item-floating .badge-circle-check {
         font-size: 13px;
         line-height: 13px;
-        padding-top: 3.5px;
+        padding-top: 3.3px;
     }
     /*----- .badge-circle-check.sm -----*/
 }
