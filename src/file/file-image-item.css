@@ -148,6 +148,8 @@ body.dark {
 @media screen and (min-width: 641px) {
     .file-image-item {
         padding: 10px 10px;
+        /* padding-right: 10px; */
+        padding-right: 15px;
     }
 
     .file-image-item-text {
@@ -366,17 +368,21 @@ body.dark {
 }
 
 .file-image-item-trailing .badge-checked {
-    line-height: .8em;
-    font-size: .8em;
+    line-height: 16px;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 480px) {
     /*----- .badge-number.sm -----*/
     .file-image-item-trailing .badge-number,
     .file-image-item-floating .badge-number {
-        line-height: .65em;
+        /* line-height: .65em;
         font-size: .65em;
-        padding-top: 0px;
+        padding-top: 0px; */
+        min-width: 20px;
+        height: 20px;
+        line-height: 13px;
+        font-size: 13px;
     }
     /*----- .badge-number.sm -----*/
 
@@ -384,14 +390,22 @@ body.dark {
     .file-image-item-trailing .badge-checked {
         /* line-height: .65em;
         font-size: .65em; */
-        line-height: .7em;
+        /* line-height: .7em;
         font-size: .7em;
-        padding-top: 0px;
+        padding-top: 0px; */
+        min-width: 20px;
+        height: 20px;
+        line-height: 14px;
+        font-size: 14px;
     }
     .file-image-item-floating .badge-checked {
-        line-height: .65em;
+        /* line-height: .65em;
         font-size: .65em;
-        padding-top: 0px;
+        padding-top: 0px; */
+        min-width: 20px;
+        height: 20px;
+        line-height: 13px;
+        font-size: 13px;
     }
     /*----- .badge-checked.sm -----*/
 }
