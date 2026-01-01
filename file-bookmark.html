@@ -230,7 +230,7 @@
             <div class="popover-inner">Modal Popover</div>
         </div>
     </div>
-    <div class="action-menu-template">
+    <!-- <div class="action-menu-template">
         <div class="action-menu-block">
             <div class="action-menu" data-index="__data-index__">
                 <div class="action-menu-item selected" onclick="onEdit(this)">
@@ -254,7 +254,13 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <div class="action-menu-template">
+        <div class="action-menu-block">
+            <div class="action-menu" data-index="__data-index__">
+            </div>
+        </div>
+    </div> 
     <div class="modal-template main">
         <div class="modal-backdrop">
             <div class="modal">
@@ -351,28 +357,71 @@
             board.classList.add('active');
             selected = id;
         }
-        var groupNav = document.querySelector('.bookmark-group-action-button');
-        popover(groupNav, {
+        var groupAction = document.querySelector('.bookmark-group-action-button');
+        popover(groupAction, {
             template: '.popover-template.tooltip-style',
             placement: 'bottom'
         });
-        var popovers = new Map();
-        var bookmarkNavs = document.querySelectorAll('.bookmark-item-action-button');
-        for(var item of bookmarkNavs) {
-            var pop = popover(item, {
+        // var popovers = new Map();
+        // var bookmarkActions = document.querySelectorAll('.bookmark-item-action-button');
+        // for(var item of bookmarkActions) {
+        //     var pop = popover(item, {
+        //         template: '.action-menu-template',
+        //         placement: 'left',
+        //         stopPropagation: true
+        //     });
+        //     var index = item.getAttribute('data-index');
+        //     popovers.set(index, pop);
+        // }
+        // function onEdit(ele) {
+        //     var index = ele
+        //         .closest('.action-menu').getAttribute('data-index');
+        //     var pop = popovers.get(index);
+        //     if (pop) {
+        //         pop.close();
+        //         var dialog = modal(document.querySelector('.modal-template.main'));
+        //         dialog.onOpened = function(ele) {
+        //             var setting = ele.querySelector('.setting-button');
+        //             popover(setting, {
+        //                 template: '.popover-template.modal-popover-template',
+        //                 placement: 'bottom'
+        //             });
+        //         }
+        //         dialog.onClosed = function(ele) {
+        //         }
+        //         dialog.open();
+        //     }
+        // }
+        // function onDelete(ele) {
+        //     var index = ele
+        //         .closest('.action-menu').getAttribute('data-index');
+        //     var pop = popovers.get(index);
+        //     if (pop) {
+        //         // pop.close();
+        //     }
+        // }
+        var bookmarkActions = document.querySelectorAll('.bookmark-item-action-button');
+        for(var item of bookmarkActions) {
+            var actionItems = [{ 
+                name: 'Edit', 
+                icon: 'fa-solid fa-pen fa-fw', 
+                selected: true, 
+                onClick: onEdit 
+            }, { 
+                type: 'separator' 
+            }, { 
+                name: 'Delete', 
+                icon: 'fa-solid fa-trash fa-fw', 
+                class: 'danger', 
+                onClick: onDelete }
+            ];
+            var _actionMenu = actionMenu(item, {
                 template: '.action-menu-template',
                 placement: 'left',
                 stopPropagation: true
-            });
-            var index = item.getAttribute('data-index');
-            popovers.set(index, pop);
-        }
-        function onEdit(ele) {
-            var index = ele
-                .closest('.action-menu').getAttribute('data-index');
-            var pop = popovers.get(index);
-            if (pop) {
-                pop.close();
+            }, actionItems);
+            function onEdit(ele) {
+                var index = ele.closest('.action-menu').getAttribute('data-index');
                 var dialog = modal(document.querySelector('.modal-template.main'));
                 dialog.onOpened = function(ele) {
                     var setting = ele.querySelector('.setting-button');
@@ -385,17 +434,9 @@
                 }
                 dialog.open();
             }
-        }
-        function onDelete(ele) {
-            var index = ele
-                .closest('.action-menu').getAttribute('data-index');
-            var pop = popovers.get(index);
-            if (pop) {
-                // pop.close();
+            function onDelete(ele) {
+                var index = ele.closest('.action-menu').getAttribute('data-index');
             }
-        }
-        function onButtonClick() {
-            toast.show('Show Toast');
         }
         function onSubmit() {
             var dialog = modal(document.querySelector('.modal-template.sub'));
@@ -407,6 +448,9 @@
                 });
             }
             dialog.open();
+        }
+        function onButtonClick() {
+            toast.show('Show Toast');
         }
     </script>
 </body>
