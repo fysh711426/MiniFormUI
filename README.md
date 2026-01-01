@@ -23,11 +23,12 @@ Import css and js.
 ### Demo  
 
 [https://fysh711426.github.io/mini-form-ui/index.html](https://fysh711426.github.io/mini-form-ui/index.html)  
+[https://fysh711426.github.io/mini-form-ui/form.html](https://fysh711426.github.io/mini-form-ui/form.html)  
+[https://fysh711426.github.io/mini-form-ui/modal.html](https://fysh711426.github.io/mini-form-ui/modal.html)  
 [https://fysh711426.github.io/mini-form-ui/file.html](https://fysh711426.github.io/mini-form-ui/file.html)  
 [https://fysh711426.github.io/mini-form-ui/file-text.html](https://fysh711426.github.io/mini-form-ui/file-text.html)  
 [https://fysh711426.github.io/mini-form-ui/file-image.html](https://fysh711426.github.io/mini-form-ui/file-image.html)  
 [https://fysh711426.github.io/mini-form-ui/file-video.html](https://fysh711426.github.io/mini-form-ui/file-video.html)  
-[https://fysh711426.github.io/mini-form-ui/form.html](https://fysh711426.github.io/mini-form-ui/form.html)  
 [https://fysh711426.github.io/mini-form-ui/file-bookmark.html](https://fysh711426.github.io/mini-form-ui/file-bookmark.html)  
 
 ---  
