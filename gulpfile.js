@@ -78,6 +78,8 @@ gulp.task('script', function () {
         './src/popover/popover.js',
         './src/dropdown/dropdown-menu.js',
         './src/modal/modal.js',
+        './src/modal/alert-modal.js',
+        './src/modal/confirm-modal.js',
         './src/gotop/gotop.js',
         './src/collapse/collapse.js',
         './src/scrollbar/scrollbar.js',
