@@ -71,6 +71,7 @@ gulp.task('script', function () {
         './src/theme/theme.js',
         './src/scroll/scroll.js',
         './src/scroll/resize.js',
+        './src/scrollbar/scrollbar.js',
         './src/tooltip/tooltip.js',
         './src/progress/progress.js',
         './src/spinner/spinner.js',
@@ -82,7 +83,6 @@ gulp.task('script', function () {
         './src/modal/confirm-modal.js',
         './src/gotop/gotop.js',
         './src/collapse/collapse.js',
-        './src/scrollbar/scrollbar.js',
         './src/search/search.js',
         './src/layout/layout.js'
     ])
