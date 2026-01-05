@@ -81,6 +81,7 @@ gulp.task('script', function () {
         './src/modal/modal.js',
         './src/modal/alert-modal.js',
         './src/modal/confirm-modal.js',
+        './src/modal/prompt-modal.js',
         './src/gotop/gotop.js',
         './src/collapse/collapse.js',
         './src/search/search.js',
