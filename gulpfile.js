@@ -7,6 +7,7 @@ var rename = require("gulp-rename");
 gulp.task('css', function () {
     return gulp.src([
         './src/button/button.css',
+        './src/button/button-o.css',
         './src/badge/badge.css',
         './src/alert/alert.css',
         './src/tooltip/tooltip.css',
