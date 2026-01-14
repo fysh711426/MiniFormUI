@@ -109,10 +109,15 @@ body.dark {
     cursor: pointer;
 }
 
+.board.bookmark-group {
+    padding-bottom: 1px;
+}
+
 .bookmark-group-title {
     display: flex;
     justify-content: space-between;
     margin: auto;
+    margin-bottom: 15px;
 }
 
 .bookmark-group-title .start {
@@ -149,8 +154,8 @@ body.dark {
 }
 
 .bookmark-group-children {
-    /*padding-top: 5px;*/
-    padding-top: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .bookmark-group .bookmark-group-children {
@@ -191,14 +196,6 @@ body.dark {
     border-width: 1px;
     margin: 10px auto;
     cursor: pointer;
-}
-
-.bookmark-item.first {
-    margin-top: 0px;
-}
-
-.bookmark-item.last {
-    margin-bottom: 0px;
 }
 
 .bookmark-item-icon {
