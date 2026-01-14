@@ -130,7 +130,7 @@ body.dark {
     align-items: center;
 }
 
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
     .bookmark-group-title .end {
         padding-right: 10px;
     }
@@ -140,7 +140,7 @@ body.dark {
     .bookmark-group-title .end {
         padding-right: 15px;
     }
-}
+} */
 
 .bookmark-group-title-text {
     font-weight: 700;
