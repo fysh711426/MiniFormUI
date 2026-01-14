@@ -1,12 +1,14 @@
 body.light {
+    --bookmarkGroupHoverBgColor: #fcfcfc;
     --bookmarkItemHoverBgColor: #f5f5f5;
 }
 
 body.dark {
+    --bookmarkGroupHoverBgColor: #333333;
     --bookmarkItemHoverBgColor: #383838;
 }
 
-/*----- bookmark-item -----*/
+/*----- bookmark-group -----*/
 
 @media screen and (min-width: 1025px) {
     .bookmark-group a:hover {
@@ -18,7 +20,19 @@ body.dark {
     }
 }
 
-/*----- bookmark-item -----*/
+/*----- bookmark-group -----*/
+
+/*----- bookmark-group -----*/
+
+/* .bookmark-group:hover {
+    background-color: var(--bookmarkGroupHoverBgColor);
+} */
+
+.bookmark-group:hover:not(:has(.bookmark-group-children:hover)) {
+    background-color: var(--bookmarkGroupHoverBgColor);
+}
+
+/*----- bookmark-group -----*/
 
 /*----- bookmark-item -----*/
 
@@ -32,7 +46,23 @@ body.dark {
     background-color: var(--bookmarkItemHoverBgColor);
 }
 
-.bookmark-item.active,
+.bookmark-item .bookmark-item-icon {
+    color: var(--fileIconColor);
+}
+
+.bookmark-item:hover .bookmark-item-icon {
+    color: var(--fileIconHoverColor);
+}
+
+.bookmark-item-description {
+    color: var(--fileDescriptionColor);
+}
+
+.bookmark-item-sub-title {
+    color: var(--fileDescriptionColor);
+}
+
+/* .bookmark-item.active,
 .bookmark-item.active.hover:hover {
     background-color: var(--fileItemActiveBgColor);
 }
@@ -45,14 +75,6 @@ body.dark {
     color: var(--fileItemActiveColor);
 }
 
-.bookmark-item .bookmark-item-icon {
-    color: var(--fileIconColor);
-}
-
-.bookmark-item:hover .bookmark-item-icon {
-    color: var(--fileIconHoverColor);
-}
-
 .bookmark-item.active .bookmark-item-icon {
     color: var(--fileItemActiveIconColor);
 }
@@ -61,20 +83,12 @@ body.dark {
     color: var(--fileItemActiveIconColor);
 }
 
-.bookmark-item-description {
-    color: var(--fileDescriptionColor);
-}
-
 .bookmark-item.active .bookmark-item-description {
     color: var(--fileItemActiveDescriptionColor);
 }
 
 .bookmark-item.active.hover:hover .bookmark-item-description {
     color: var(--fileItemActiveDescriptionColor);
-}
-
-.bookmark-item-sub-title {
-    color: var(--fileDescriptionColor);
 }
 
 .bookmark-item.active .bookmark-item-sub-title {
@@ -99,7 +113,7 @@ body.dark {
 
 .bookmark-item.active.hover:hover a:hover {
     color: var(--fileItemActiveLinkHoverColor);
-}
+} */
 
 /*----- bookmark-item -----*/
 
