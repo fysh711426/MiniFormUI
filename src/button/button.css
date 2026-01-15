@@ -505,10 +505,12 @@ body.dark {
 
 @media screen and (min-width: 1025px) {
     .icon-button:not(:disabled):hover {
+        color: var(--iconButtonColor);
         background-color: var(--iconButtonHoverBgColor);
     }
     
     .icon-button:not(:disabled):active {
+        color: var(--iconButtonColor);
         background-color: var(--iconButtonActiveBgColor);
     }
 }

@@ -168,13 +168,17 @@
                                         </div>
                                         <div class="bookmark-item-description">5 Items</div>
                                     </div>
-                                    <a class="bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
-                                        <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
-                                    </a>
-                                    <a class="bookmark-item-menu-button" href="javascript:void(0)" data-index="1">
-                                        <!-- <i class="fa-solid fa-ellipsis-vertical fa-fw"></i> -->
-                                        <i class="fa-solid fa-trash fa-fw"></i>
-                                    </a>
+                                    <div class="bookmark-item-trailing">
+                                        <div class="bookmark-item-trailing-block">
+                                            <a class="icon-button round bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer" onclick="onIconButtonClick(event)">
+                                                <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
+                                            </a>
+                                            <a class="icon-button round danger bookmark-item-menu-button" href="javascript:void(0)" data-index="1" onclick="onIconButtonClick(event)">
+                                                <!-- <i class="fa-solid fa-ellipsis-vertical fa-fw"></i> -->
+                                                <i class="fa-solid fa-trash fa-fw"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div onclick="onBookmarkClick(this)">
@@ -192,12 +196,16 @@
                                         </div>
                                         <div class="bookmark-item-description sm">3 Items</div>
                                     </div>
-                                    <a class="bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
-                                        <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
-                                    </a>
-                                    <a class="bookmark-item-menu-button" href="javascript:void(0)" data-index="2">
-                                        <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
-                                    </a>
+                                    <div class="bookmark-item-trailing">
+                                        <div class="bookmark-item-trailing-block">
+                                            <a class="icon-button round bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer" onclick="onIconButtonClick(event)">
+                                                <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
+                                            </a>
+                                            <a class="icon-button round danger bookmark-item-menu-button" href="javascript:void(0)" data-index="2" onclick="onIconButtonClick(event)">
+                                                <i class="fa-solid fa-trash fa-fw"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div onclick="onBookmarkClick(this)">
@@ -214,12 +222,16 @@
                                             <span>test/bookmark/03</span>
                                         </div>
                                     </div>
-                                    <a class="bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
-                                        <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
-                                    </a>
-                                    <a class="bookmark-item-menu-button" href="javascript:void(0)" data-index="3">
-                                        <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
-                                    </a>
+                                    <div class="bookmark-item-trailing">
+                                        <div class="bookmark-item-trailing-block">
+                                            <a class="icon-button round bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer" onclick="onIconButtonClick(event)">
+                                                <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
+                                            </a>
+                                            <a class="icon-button round danger bookmark-item-menu-button" href="javascript:void(0)" data-index="3" onclick="onIconButtonClick(event)">
+                                                <i class="fa-solid fa-trash fa-fw"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -274,31 +286,11 @@
             selected = id;
         }
         if (true) {
-            var groupMenu = document.querySelector('.bookmark-group-menu-button');
-            var options = [
-                { text: 'Edit', value: 0, icon: 'fa-solid fa-pen fa-fw' },
-                { text: 'Delete', value: 1, icon: 'fa-solid fa-trash fa-fw', className: 'danger', separator: true }
-            ];
-            var _dropdownMenu = dropdownMenu(groupMenu, {
-                template: '.dropdown-menu-template',
-                placement: 'left',
-                stopPropagation: true,
-                enableSelect: false,
-                options: options
-            });
-            _dropdownMenu.onChange = function (ele, val) {
-                if (val === 0) {
-                    onEdit(ele);
-                    return;
-                }
-                // onDelete(ele);
-            }
-        }
-        if (true) {
-            var bookmarkMenus = document.querySelectorAll('.bookmark-item-menu-button');
-            for(var item of bookmarkMenus) {
+            var groupMenus = document.querySelectorAll('.bookmark-group-menu-button');
+            for(var item of groupMenus) {
                 var options = [
-                    { text: 'Delete', icon: 'fa-solid fa-trash fa-fw', className: 'danger' }
+                    { text: 'Edit', value: 0, icon: 'fa-solid fa-pen fa-fw' },
+                    { text: 'Delete', value: 1, icon: 'fa-solid fa-trash fa-fw', className: 'danger', separator: true }
                 ];
                 var _dropdownMenu = dropdownMenu(item, {
                     template: '.dropdown-menu-template',
@@ -308,18 +300,11 @@
                     options: options
                 });
                 _dropdownMenu.onChange = function (ele, val) {
-                    var _confirm = confirmModal({
-                        title: 'Delete',
-                        content: 'Are you sure you want to delete this bookmark?',
-                        confirmText: 'Delete',
-                        confirmClass: 'danger'
-                    });
-                    _confirm.onClosed = function (ele, action) {
-                        if (action === 'confirm') {
-                            toast.show('Saved successfully');
-                        }
+                    if (val === 0) {
+                        onEdit(ele);
+                        return;
                     }
-                    _confirm.open();
+                    onDelete(ele);
                 }
             }
         }
@@ -342,6 +327,20 @@
             }
             _prompt.open();
         }
+        function onDelete(ele) {
+            var _confirm = confirmModal({
+                title: 'Delete',
+                content: 'Are you sure you want to delete this group?',
+                confirmText: 'Delete',
+                confirmClass: 'danger'
+            });
+            _confirm.onClosed = function (ele, action) {
+                if (action === 'confirm') {
+                    toast.show('Saved successfully');
+                }
+            }
+            _confirm.open();
+        }
         function onButtonClick() {
             var _prompt = promptModal({
                 title: 'Create Group',
@@ -360,6 +359,9 @@
                 console.log(`value: ${value}`);
             }
             _prompt.open();
+        }
+        function onIconButtonClick(e) {
+            e.stopPropagation();
         }
         scrollbar(document.querySelector('.board-toolbar-scrollable'));
     </script>
