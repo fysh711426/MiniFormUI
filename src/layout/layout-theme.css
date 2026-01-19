@@ -140,8 +140,12 @@ a.link-default:active {
     box-shadow: var(--boardShadow);
 }
 
-.sub-menu-item.active {
+/* .sub-menu-item.active {
     border-bottom-color: var(--menuSelected);
+} */
+
+.sub-menu-item.active::before {
+    background-color: var(--menuSelected);
 }
 
 @media screen and (min-width: 1025px) {
