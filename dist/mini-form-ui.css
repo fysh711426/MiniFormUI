@@ -2236,6 +2236,7 @@ body.dark {
 .modal-scrollable {
     overflow-y: auto;
     flex-grow: 1;
+    overscroll-behavior: contain;
 }
 
 .modal-header {
