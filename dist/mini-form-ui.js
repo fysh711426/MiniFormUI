@@ -112,6 +112,8 @@ var bodyScroll = (function () {
             document.body.style.top = `-${scrollY}px`;
             document.body.style.minWidth  = `calc(100% - ${scrollbarWidth}px)`;
             document.body.style.maxWidth  = `calc(100% - ${scrollbarWidth}px)`;
+            document.body.style.overscrollBehavior = 'contain';
+            document.documentElement.style.overscrollBehavior = 'contain';
         }
         isLocked = true;
     }
@@ -126,6 +128,8 @@ var bodyScroll = (function () {
             document.body.style.minWidth = '';
             document.body.style.maxWidth = '';
             document.body.style.paddingRight = '';
+            document.body.style.overscrollBehavior = '';
+            document.documentElement.style.overscrollBehavior = '';
             window.scrollTo({ 
                 top: scrollY,
                 behavior: 'instant'
