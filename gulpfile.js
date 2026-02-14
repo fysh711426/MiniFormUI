@@ -51,7 +51,8 @@ gulp.task('file-css', function () {
         './src/file/file-video-player.css',
         './src/file/file-text-theme.css',
         './src/file/file-search.css',
-        './src/file/file-bookmark.css'
+        './src/file/file-bookmark.css',
+        './src/file/file-bookmark-popover.css'
     ])
     .pipe(concat('mini-form-ui-file.css'))
     .pipe(gulp.dest('./dist/'));
